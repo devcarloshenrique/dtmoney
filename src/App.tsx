@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import { Header } from './components/Header';
 import { GlobalStyle } from './styles/global';
+import { NewTransactionsModal } from './components/NewTransactionsModal';
 
 //Acessibilidade
 Modal.setAppElement('#root');
@@ -28,12 +29,9 @@ export function App() {
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
       <Dashboard />
 
-      <Modal 
+      <NewTransactionsModal 
         isOpen={isNewTransactionModalOpen} 
-        onRequestClose={handleCloseNewTransactionModal}
-      >
-        <h2>Cadastrar</h2>
-      </Modal>
+        onRequestClose={handleCloseNewTransactionModal}/>
 
       <GlobalStyle/>
     </>
